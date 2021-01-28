@@ -1,0 +1,102 @@
+print('\n\t\t\t\t\t\tWelcome to health management system, to save your log about what you ate & exercise by Kamal Ahmed.\n')
+
+while True:
+    try:
+        def getdate():
+            import datetime as dt
+            return str(dt.datetime.now())
+
+
+        def write():
+            while client_name == 1:
+                if activity == 1:
+                    food = (input('Enter food you ate: '))
+                    with open('harry-food.txt', 'a') as f:
+                        f.write("[" + getdate() + "]: " + food + '\n')
+                        print('saved,', food)
+                        break
+                elif activity == 2:
+                    exercise = (input('Enter name of exercise: '))
+                    with open('harry-exercise.txt', 'a') as f:
+                        f.write("[" + getdate() + "]: " + exercise + '\n')
+                        print('saved,', exercise)
+                        break
+
+            while client_name == 2:
+                if activity == 1:
+                    food = (input('Enter food you ate: '))
+                    with open('rohan-food.txt', 'a') as f:
+                        f.write("[" + getdate() + "]: " + food + '\n')
+                        print('saved,', food)
+                        break
+
+                elif activity == 2:
+                    exercise = (input('Enter name of exercise: '))
+                    with open('rohan-exercise.txt', 'a') as f:
+                        f.write("[" + getdate() + "]: " + exercise + '\n')
+                        print('saved,', exercise)
+                        break
+
+            while client_name == 3:
+                if activity == 1:
+                    food = (input('Enter food you ate: '))
+                    with open('hammad-food.txt', 'a') as f:
+                        f.write("[" + getdate() + "]: " + food + '\n')
+                        print('saved,', food)
+                        break
+
+                elif activity == 2:
+                    exercise = (input('Enter name of exercise: '))
+                    with open('hammad-exercise.txt', 'a') as f:
+                        f.write("[" + getdate() + "]: " + exercise + '\n')
+                        print('saved,', exercise)
+                        break
+
+
+        def read():
+            while client_name == 1:
+                if activity == 1:
+                    with open('harry-food.txt') as f:
+                        print(f.read())
+                        break
+                elif activity == 2:
+                    with open('harry-exercise.txt', 'a') as f:
+                        print(f.read())
+                        break
+
+            while client_name == 2:
+                if activity == 1:
+                    with open('rohan-food.txt') as f:
+                        print(f.read())
+                        break
+                elif activity == 2:
+                    with open('rohan-exercise.txt', 'a') as f:
+                        print(f.read())
+                        break
+
+            while client_name == 3:
+                if activity == 1:
+                    with open('hammad-food.txt') as f:
+                        print(f.read())
+                        break
+
+                elif activity == 2:
+                    with open('hammad-exercise.txt') as f:
+                        print(f.read())
+                        break
+
+        data_type = int(input('What do you want to do? \n1. Log\n2. Retrieve'))
+        client_name = int(input('Choose person:\n1. Harry\n2. Rohan\n3. Hammad\n'))
+        activity = int(input('1. Food\n2. Exercise'))
+
+        if data_type == 1:
+            write()
+        elif data_type == 2:
+            read()
+
+    except:
+        print('Invalid input !')
+
+    y = input('Any key to continue or Q to quit: ').capitalize()
+    if y == 'Q':
+        break
