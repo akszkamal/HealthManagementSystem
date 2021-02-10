@@ -1,0 +1,19 @@
+import random
+i = 0; win = 0; draw = 0; loss = 0; inv = 0
+while i < 10:
+    lst = ['S', 'W', 'G']
+    comp = random.choice(lst)
+    choose = (input("S for Snake, W for water, G for gun: ")).capitalize()
+    if (comp == 'S' and choose == 'S') or (comp == 'W' and choose == 'W') or (comp == 'G' and choose == 'G'):
+        draw +=1
+        print(f"Current Score: Win ={win}, Loss={loss}, Draw={draw}, Invalid input={inv}")
+    elif (comp == 'W' and choose == 'S') or (comp == 'S' and choose == 'G') or (comp == 'G' and choose == 'W'):
+        win +=1; print(f"Current Score: Win ={win}, Loss={loss}, Draw={draw}, Invalid input={inv}")
+    elif (comp == 'S' and choose == 'W') or (comp == 'W' and choose == 'G') or (comp == 'G' and choose == 'S'):
+        loss +=1; print(f"Current Score: Win ={win}, Loss={loss}, Draw={draw}, Invalid input={inv}")
+    else: inv+=1; print(f"Invalid input\nCurrent Score: Win ={win}, Loss={loss}, Draw={draw}, Invalid input={inv}")
+    i += 1
+print(f"Final Score: Win ={win}, Loss={loss}, Draw={draw}, Invalid input={inv}")
+if win > loss: print('You won')
+elif loss > win: print('Computer won')
+else: print('Draw')
