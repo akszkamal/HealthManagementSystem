@@ -1,0 +1,21 @@
+hidden_number = 18
+guess_count = 1
+no_of_guess = int(input('''Welcome to the guess game ! 
+Enter number of guesses: '''))
+while guess_count <= no_of_guess:
+    guess_num = int(input('Please enter a number: '))
+    if guess_num == 18 and guess_count == 1:
+        print('Congratulation, you guessed the number in', guess_count, 'try')
+        break
+    if guess_num == 18 and guess_count > 1:
+        print('Congratulation, you guessed the number in', guess_count, 'tries')
+        break
+    if guess_num > 18:
+        print(guess_num, 'is greater than hidden number !')
+    elif guess_num<18:
+        print(guess_num, 'is smaller than hidden number !')
+    print('Guess try left', no_of_guess - guess_count)
+    if 9 - guess_count == 0:
+        print('Game Over')
+        break
+    guess_count += 1
